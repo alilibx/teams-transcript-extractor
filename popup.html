@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 320px;
+      padding: 16px;
+      font-family: 'Segoe UI', sans-serif;
+      background: #1b1b2e;
+      color: #e0e0e0;
+      margin: 0;
+    }
+    h3 { margin: 0 0 12px; font-size: 15px; color: #a9a9f5; }
+
+    button {
+      width: 100%; padding: 10px 0;
+      border: none; border-radius: 4px;
+      font-size: 14px; cursor: pointer;
+    }
+    #extractBtn  { background: #6264a7; color: #fff; }
+    #downloadBtn { background: #2d6a30; color: #fff; display: none; margin-top: 8px; }
+    button:disabled { opacity: 0.45; cursor: default; }
+
+    #progressWrap {
+      display: none; margin-top: 10px;
+      background: #2a2a3e; border-radius: 3px; height: 5px; overflow: hidden;
+    }
+    #progressBar { height: 100%; background: #6264a7; width: 0%; transition: width .3s; }
+
+    #status { margin-top: 8px; font-size: 12px; color: #999; min-height: 16px; }
+
+    /* ── Validation panel ── */
+    #validation {
+      display: none;
+      margin-top: 10px;
+      border-top: 1px solid #2e2e4e;
+      padding-top: 10px;
+    }
+    #validation .v-title {
+      font-size: 11px; color: #888; text-transform: uppercase;
+      letter-spacing: .06em; margin-bottom: 6px;
+    }
+    .v-row {
+      display: flex; align-items: flex-start;
+      gap: 6px; margin-bottom: 5px; font-size: 12px;
+    }
+    .v-icon { flex-shrink: 0; font-size: 13px; width: 16px; text-align: center; }
+    .ok   { color: #6fcf97; }
+    .warn { color: #f2994a; }
+    .v-label { color: #888; min-width: 88px; flex-shrink: 0; }
+    .v-detail {
+      color: #ccc; font-size: 11px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      max-width: 162px;
+    }
+
+    #overallBadge {
+      margin-top: 8px; padding: 5px 8px;
+      border-radius: 4px; font-size: 12px; font-weight: 600; text-align: center;
+    }
+    .badge-ok   { background: #1a3a1e; color: #6fcf97; border: 1px solid #2d6a30; }
+    .badge-warn { background: #3a2a10; color: #f2994a; border: 1px solid #7a4a10; }
+
+    .hint { margin-top: 10px; font-size: 11px; color: #555; }
+  </style>
+</head>
+<body>
+  <h3>Teams Transcript Extractor</h3>
+  <button id="extractBtn">Extract Transcript</button>
+  <button id="downloadBtn">Download .txt</button>
+
+  <div id="progressWrap"><div id="progressBar"></div></div>
+  <div id="status">Open a Teams meeting transcript, then click Extract.</div>
+
+  <div id="validation">
+    <div class="v-title">Validation</div>
+
+    <div class="v-row" id="vr-start">
+      <span class="v-icon">·</span>
+      <span class="v-label">Start event</span>
+      <span class="v-detail">—</span>
+    </div>
+    <div class="v-row" id="vr-stop">
+      <span class="v-icon">·</span>
+      <span class="v-label">Stop event</span>
+      <span class="v-detail">—</span>
+    </div>
+    <div class="v-row" id="vr-gaps">
+      <span class="v-icon">·</span>
+      <span class="v-label">Completeness</span>
+      <span class="v-detail">—</span>
+    </div>
+    <div class="v-row" id="vr-time">
+      <span class="v-icon">·</span>
+      <span class="v-label">Timestamps</span>
+      <span class="v-detail">—</span>
+    </div>
+
+    <div id="overallBadge"></div>
+  </div>
+
+  <div class="hint" id="hint">Keep this popup open while extracting.</div>
+  <script src="popup.js"></script>
+</body>
+</html>

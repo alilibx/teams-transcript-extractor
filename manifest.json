@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Teams Transcript Extractor",
+  "version": "1.0",
+  "description": "Extracts full MS Teams transcripts by auto-scrolling the virtual list",
+  "permissions": ["activeTab", "webNavigation"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Extract Teams Transcript"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://teams.microsoft.com/*",
+        "https://*.sharepoint.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
