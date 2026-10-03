@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6264a7"/>
+      <stop offset="100%" style="stop-color:#464775"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background -->
+  <rect width="128" height="128" rx="20" ry="20" fill="url(#bg)"/>
+  <!-- Document/transcript icon -->
+  <rect x="32" y="22" width="64" height="84" rx="6" ry="6" fill="#ffffff" opacity="0.95"/>
+  <!-- Text lines representing transcript -->
+  <rect x="42" y="36" width="28" height="4" rx="2" fill="#6264a7" opacity="0.7"/>
+  <rect x="42" y="46" width="44" height="3" rx="1.5" fill="#9b9bc5" opacity="0.5"/>
+  <rect x="42" y="53" width="38" height="3" rx="1.5" fill="#9b9bc5" opacity="0.5"/>
+  <rect x="42" y="64" width="24" height="4" rx="2" fill="#6264a7" opacity="0.7"/>
+  <rect x="42" y="74" width="44" height="3" rx="1.5" fill="#9b9bc5" opacity="0.5"/>
+  <rect x="42" y="81" width="32" height="3" rx="1.5" fill="#9b9bc5" opacity="0.5"/>
+  <rect x="42" y="88" width="40" height="3" rx="1.5" fill="#9b9bc5" opacity="0.5"/>
+  <!-- Down-arrow overlay indicating extraction/download -->
+  <circle cx="88" cy="88" r="18" fill="#464775" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M88 78 L88 95 M80 89 L88 97 L96 89" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -1,0 +1,20 @@
+{
+  "name": "teams-transcript-extractor",
+  "version": "1.0.0",
+  "description": "Chrome/Edge extension that extracts full Microsoft Teams meeting transcripts",
+  "author": "Ali Alhashimi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alilibx/teams-transcript-extractor.git"
+  },
+  "homepage": "https://github.com/alilibx/teams-transcript-extractor",
+  "bugs": {
+    "url": "https://github.com/alilibx/teams-transcript-extractor/issues"
+  },
+  "scripts": {
+    "package": "node scripts/package.js",
+    "icons": "node scripts/generate-icons.js"
+  },
+  "private": true
+}
